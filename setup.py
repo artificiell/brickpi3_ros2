@@ -2,11 +2,11 @@ import os
 from glob import glob
 from setuptools import find_packages, setup
 
-package_name = 'ros2_brickpi3'
+package_name = 'brickpi3_ros2'
 
 setup(
     name=package_name,
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -18,18 +18,18 @@ setup(
     zip_safe=True,
     maintainer='pi',
     maintainer_email='andreas.persson@oru.se',
-    description='ROS 2 - BrickPi3 wrapper',
+    description='BrickPi3 to ROS 2 wrapper',
     license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "color = ros2_brickpi3.color:main",
-            "drive = ros2_brickpi3.drive:main",
-            "eyes = ros2_brickpi3.eyes:main",
-            "gyro = ros2_brickpi3.gyro:main",
-            "motor = ros2_brickpi3.motor:main",
-            "touch = ros2_brickpi3.touch:main",
-            "ultrasonic = ros2_brickpi3.ultrasonic:main"
+            "color = brickpi3_ros2.color:main",
+            "drive = brickpi3_ros2.drive:main",
+            "eyes = brickpi3_ros2.eyes:main",
+            "gyro = brickpi3_ros2.gyro:main",
+            "motor = brickpi3_ros2.motor:main",
+            "touch = brickpi3_ros2.touch:main",
+            "ultrasonic = brickpi3_ros2.ultrasonic:main"
         ],
     },
 )

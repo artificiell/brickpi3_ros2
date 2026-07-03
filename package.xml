@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2_brickpi3</name>
-  <version>0.0.1</version>
-  <description>Package for interface BrickPi3</description>
+  <name>brickpi3_ros2</name>
+  <version>0.0.2</version>
+  <description>BrickPi3 to ROS 2 wrapper</description>
   <maintainer email="andreas.persson@our.se">pi</maintainer>
   <license>MIT</license>
 

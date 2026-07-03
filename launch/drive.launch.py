@@ -42,7 +42,7 @@ def generate_launch_description():
     motors = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                FindPackageShare('ros2_brickpi3'),
+                FindPackageShare('brickpi3_ros2'),
                 'launch',
                 'motors.launch.py'
             ])
@@ -56,7 +56,7 @@ def generate_launch_description():
 
     # Differential drive node
     drive = Node(
-        package = 'ros2_brickpi3',
+        package = 'brickpi3_ros2',
         namespace = robot_ns,
         executable = 'drive',
         name = 'differential_drive_controller',

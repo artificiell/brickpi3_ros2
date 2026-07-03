@@ -27,7 +27,7 @@ def generate_launch_description():
     
     # Left motor node
     left_motor = Node(
-        package = 'ros2_brickpi3',
+        package = 'brickpi3_ros2',
         namespace = robot_ns,
         executable = 'motor',
         name = 'left_motor_controller',
@@ -42,7 +42,7 @@ def generate_launch_description():
 
     # Right motor node
     right_motor = Node(
-        package = 'ros2_brickpi3',
+        package = 'brickpi3_ros2',
         namespace = robot_ns,
         executable = 'motor',
         name = 'right_motor_controller',
