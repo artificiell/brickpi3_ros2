@@ -1,4 +1,4 @@
-# ros2_brickpi3
+# brickpi3_ros2
 Repository for ROS2-BrickPi3 wrapper.
 
 ## Prerequisites
@@ -12,7 +12,7 @@ Repository for ROS2-BrickPi3 wrapper.
 1. Clone the repository to your ROS 2 workspace, e.g.:
 ```
 cd ~/ros2_ws/src/
-git clone https://github.com/artificiell/ros2_brickpi3.git
+git clone https://github.com/artificiell/brickpi3_ros2.git
 ```
 
 2. Build the ROS 2 workspace:
@@ -35,7 +35,7 @@ To use any of the LEGO Sensor nodes, follow these steps:
 
 2. Run the node, e.g., for the  LEGO Color Sensor:
 ```
-ros2 run ros2_brickpi3 color --ros-args -p port:=1
+ros2 run brickpi3_ros2 color --ros-args -p port:=1
 ```
 3. Subscribe to the publishing topic to receive sensor values, e.g., topic "color" to receive color sensor values:
 ```
@@ -48,7 +48,7 @@ To use the LEGO Motor Controller node, follow these steps:
 
 2. Run the node:
 ```
-ros2 run ros2_brickpi3 motor --ros-args -p port:=A
+ros2 run brickpi3_ros2 motor --ros-args -p port:=A
 ```
 
 3. Publish the desired speed to the "speed" topic to control the motor. For example, to set the motor speed to 10 (forward direction):
@@ -63,7 +63,7 @@ ros2 topic pub speed std_msgs/Int32 "{data: 0}"
 
 In addition, to simultaneously run two LEGO Motor Controller nodes, use the following launch file:
 ```
-ros2 launch ros2_brickpi3 motors.launch.py
+ros2 launch brickpi3_ros2 motors.launch.py
 
 ```
 
