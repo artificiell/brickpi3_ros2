@@ -3,7 +3,7 @@ Repository for ROS2-BrickPi3 wrapper.
 
 ## Prerequisites
 
-- ROS 2 (Foxy or later)
+- ROS 2 (Jazzy or later)
 - Python 3
 - BrickPi3 library (`brickpi3`)
 
@@ -97,16 +97,16 @@ This ROS 2 node interfaces with a LEGO Gyro Sensor using the BrickPi3 library. I
 
 ### Touch Sensor (`touch.py`) 
 
-This ROS 2 node is a handler for the EV3 Touch sensor inputs using the BrickPi3 library. It reads the touch sensor state and publishes a boolean value indicating whether the touch sensor is pressed or released.
+This ROS 2 node handles EV3 Touch sensor inputs using the BrickPi3 library. It reads the touch sensor state and publishes a boolean value indicating whether the touch sensor is pressed or released.
 
 #### Published Topics
 
-- **`pressed`** (`std_msgs/Bool`): This topic publishes a boolean value indicating the state of the touch sensor. When the touch sensor is pressed, the published value is `True`, and when the touch sensor is released, the published value is `False`.
+- **`pressed`** (`std_msgs/Bool`): This topic publishes a boolean value indicating the state of the touch sensor. When the touch sensor is pressed, the published value is `True`; when released, it is `False`.
 
 
 ### Ultrasonic Sensor (`ultrasonic.py`)
 
-This ROS 2 node is a handler for the EV3 Ultrasonic sensor inputs using the BrickPi3 library. The node uses the BrickPi3 library to communicate with the ultrasonic sensor and read the distance measurement. It reads the distance measure by the ultrasonic sensor and publishes it as a floating-point value.
+This ROS 2 node handles the EV3 Ultrasonic sensor inputs using the BrickPi3 library. The node uses the BrickPi3 library to communicate with the ultrasonic sensor and read the distance measurement. It reads the distance measured by the ultrasonic sensor and publishes it as a floating-point value.
 
 #### Published Topics
 
@@ -121,11 +121,11 @@ This ROS 2 node serves as a controller for handling EV3 Motor commands using the
 
 #### Subscribed Topics
 
-- **`speed`** (`std_msgs/Int32`): This topic receives speed commands for controlling the motor. The speed command should be an integer value representing the desired speed of the motor in _Degrees Per Second_ (DPS). Positive values indicate forward motion, negative values indicate backward motion, and zero stops the motor.
+- **`speed`** (`std_msgs/Int32`): This topic receives speed commands for controlling the motor. The speed command should be an integer representing the desired motor speed in _Degrees Per Second_ (DPS). Positive values indicate forward motion, negative values indicate backward motion, and zero stops the motor.
 
 #### Published Topics
 
-- **`encoder`** (`std_msgs/Int32`): This topic publishes the current encoder value of the motor. The encoder value is an integer that represents the position or rotation of the motor.
+- **`encoder`** (`std_msgs/Int32`): This topic publishes the current encoder value of the motor. The encoder value is an integer representing the motor's position or rotation.
 
 #### Parameters
 
@@ -134,19 +134,19 @@ This ROS 2 node serves as a controller for handling EV3 Motor commands using the
 
 ### Differential Drive Controller(`drive.py`)
 
-This ROS 2 node implements a differential drive controller for a mobile robot. It receives movement commands and publishes speed messages to control the left and right motors. Additionally, it calculates and publishes odometry readings based on the motor encoder values.
+This ROS 2 node implements a differential drive controller for a two-wheeled mobile robot. It receives movement commands and publishes speed messages to control the left and right motors. Additionally, it calculates and publishes odometry readings based on the motor encoder values.
 
 #### Subscribed Topics
 
 - **`cmd`** (`geometry_msgs/Twist`): The movement command for the robot. It contains linear and angular velocities.
-- **`left/encoder`** (`std_msgs/Int32`): The encoder value of the left motor. It provides information about the position of the left motor.
-- **`right/encoder`** (`std_msgs/Int32`): The encoder value of the right motor. It provides information about the position of the right motor.
+- **`left/speed`** (`std_msgs/Int32`): The speed message to control the left motor. The value represents the speed in degrees per second (DPS).
+- **`right/speed`** (`std_msgs/Int32`): The speed message to control the right motor. The value represents the speed in degrees per second (DPS).
 
 #### Published Topics
 
-- **`left/speed`** (`std_msgs/Int32`): The speed message to control the left motor. The value represents the speed in degrees per second (DPS).
-- **`right/speed`** (`std_msgs/Int32`): The speed message to control the right motor. The value represents the speed in degrees per second (DPS).
-- **`odom`** (`nav_msgs/Odometry`): The odometry readings of the robot. It provides information about the position and orientation of the robot, as well as linear and angular velocities.
+- **`odom`** (`nav_msgs/Odometry`): The odometry readings of the robot. It provides information about the robot's position and orientation, as well as its linear and angular velocities.
+- **`left/encoder`** (`std_msgs/Int32`): The encoder value of the left motor. It provides information about the position of the left motor.
+- **`right/encoder`** (`std_msgs/Int32`): The encoder value of the right motor. It provides information about the position of the right motor.
 
 #### Parameters
 
